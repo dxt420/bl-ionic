@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-list-header color="light">
+    <ion-label class="fw700">Hello there<br> Please help us identify you much easier</ion-label>
+  </ion-list-header>
+  <ion-progress-bar value="0.3"></ion-progress-bar>
+  
+
+</ion-header>
+
+  <ion-content class="login auth-page">
+ 
+ 
+      
+
+
+<ion-card no-margin>
+
+
+<ion-list >
+        
+
+  
+      <ion-item lines="none">
+        <ion-label >Nationality <span style="color:red">*</span></ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+   
+       <ion-select  style="padding:10px;border-radius:5px;border:solid 1px black;background-color: rgb(244, 244, 244)" disabled>
+     
+        <ion-select-option selected>Ugandan</ion-select-option>
+        <ion-select-option>Foreigner</ion-select-option>
+        
+      </ion-select>
+    </ion-item> 
+
+
+
+
+<ion-item lines="none">
+<ion-label >Identity type <span style="color:red">*</span></ion-label>
+</ion-item>
+
+<ion-item lines="none">
+
+<ion-select (ionChange)="onChangeHandler($event)" style="padding:10px;border-radius:5px;border:solid 1px black;background-color: rgb(244, 244, 244)">
+
+<ion-select-option value="National ID" selected>National ID</ion-select-option>
+<ion-select-option value="Passport"> Passport</ion-select-option>
+
+</ion-select>
+</ion-item> 
+
+
+</ion-list>
+
+
+</ion-card>
+
+</ion-content>
+
+
+<ion-footer>
+
+
+<ion-row >
+  <ion-col size="3">
+    <ion-button size="large" expand="full" color="secondary" (click)="toPrimaryInfo()" no-margin>
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-button>
+  </ion-col>
+
+  <ion-col>
+    <ion-button size="large" expand="full" color="primary" (click)="save()" no-margin>Continue</ion-button>
+  </ion-col>
+  
+</ion-row>
+</ion-footer>

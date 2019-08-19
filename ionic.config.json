@@ -1,0 +1,12 @@
+{
+  "name": "ionic4Start",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "3fff720e",
+  "proxies": [{
+      "path": "/api",
+      "proxyUrl": "https://brightlife.pythonanywhere.com/"
+    }]
+}

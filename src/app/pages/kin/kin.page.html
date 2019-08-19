@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-list-header color="light">
+    <ion-label class="fw700">Please provide info about your Next of Kin </ion-label>
+  </ion-list-header>
+  <ion-progress-bar value="0.9"></ion-progress-bar>
+  
+
+</ion-header>
+
+  <ion-content class="login auth-page">
+ 
+
+      
+
+
+<ion-card no-margin>
+
+
+<ion-list >
+        
+
+  <form [formGroup]="slideOneForm">
+      <ion-item lines="none">
+        <ion-label style="font-weight: 500;" > Full Name <span style="color:red">*</span></ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+   
+      <ion-input style="padding: 5px !important;border-radius:5px;border:solid 1px black;background-color: rgb(244, 244, 244);" formControlName="fName" [class.invalid]="!slideOneForm.controls.fName.valid && (slideOneForm.controls.fName.dirty || submitAttempt)"></ion-input>
+
+    </ion-item> 
+
+    <ion-item lines="none" *ngIf="!slideOneForm.controls.fName.valid  && (slideOneForm.controls.fName.dirty || submitAttempt)">
+      <p style="color: #ea6153;">Please input Alphanumeric characters (Must be length of 14 charcters)</p>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-label >Mobile Number <br> </ion-label>
+</ion-item>
+<ion-item lines="none">
+   
+      <input type="text"
+      style="border-radius:5px;border:solid 1px black;background-color: rgb(244, 244, 244);padding-top:10px;padding-bottom:10px;" 
+      ng2TelInput
+      formControlName="phone"
+      [ng2TelInputOptions]="{initialCountry: 'ug'}"
+      (hasError)="hasError($event)"
+      (ng2TelOutput)="getNumber($event)"
+      (intlTelInputObject)="telInputObject($event)"
+      (countryChange)="onCountryChange($event)" />
+    </ion-item>
+
+  <ion-item *ngIf="!slideOneForm.controls.phone.valid  && (slideOneForm.controls.phone.dirty || submitAttempt)">
+    <p style="color: #ea6153;">Please enter a valid mobile number.</p>
+</ion-item>
+
+
+
+
+      </form>
+
+
+</ion-list>
+
+
+</ion-card>
+
+<!-- <ion-button size="large" expand="full" color="primary" (click)="save()" no-margin>Continue</ion-button> -->
+</ion-content>
+
+
+<ion-footer>
+
+
+<ion-row >
+  <ion-col size="3">
+    <ion-button size="large" expand="full" color="secondary" (click)="myBackButton()" no-margin>
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-button>
+  </ion-col>
+
+ 
+  <ion-col>
+    <ion-button size="large" expand="full" color="primary" (click)="save()" no-margin>Continue</ion-button>
+  </ion-col>
+  
+</ion-row>
+</ion-footer>

@@ -1,0 +1,198 @@
+
+<ion-header>
+  <ion-list-header color="light">
+    <ion-label class="fw700">Welcome {{titleValue}} {{lastNameValue}} {{firstNameValue}}<br> Please resume with your application</ion-label>
+ 
+  </ion-list-header>
+  <ion-progress-bar value="0.3"></ion-progress-bar>
+
+</ion-header>
+
+  <ion-content class="login auth-page">
+ 
+ 
+
+  <ion-card no-margin>
+   
+  
+    <ion-list >
+            
+      <form [formGroup]="slideOneForm">
+          <ion-item lines="none">
+              <ion-label >Title <span style="color:red">*</span></ion-label>
+          </ion-item>
+          <ion-radio-group [value]="titleValue" formControlName="title" (ionChange)="onChangeHandler($event)">
+
+              <ion-row >
+            
+                  <ion-col>
+                      <ion-item>
+                          <ion-label>Mr</ion-label>
+                          <ion-radio value="Mr"></ion-radio>
+                        </ion-item>
+                  </ion-col>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label>Mrs</ion-label>
+                      <ion-radio value="Mrs"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col>
+                    <ion-item>
+                     <ion-label>Miss</ion-label>
+                      <ion-radio value="Miss"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+
+
+            </ion-radio-group>
+            <ion-item *ngIf="!slideOneForm.controls.title.valid  && (slideOneForm.controls.title.dirty || submitAttempt)">
+              <p style="color: #ea6153;">Please select a suitable title.</p>
+          </ion-item>
+        
+
+        <ion-item lines="none">
+            <ion-label >First Name (as shown on ID) <span style="color:red">*</span></ion-label>
+        </ion-item>
+        <ion-item lines="none">
+           
+              <ion-input [value]="firstNameValue" formControlName="firstName" type="text" [class.invalid]="!slideOneForm.controls.firstName.valid && (slideOneForm.controls.firstName.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+  
+          <ion-item *ngIf="!slideOneForm.controls.firstName.valid  && (slideOneForm.controls.firstName.dirty || submitAttempt)">
+            <p style="color: #ea6153;">Please enter a valid name.</p>
+        </ion-item>
+  
+        <ion-item lines="none">
+            <ion-label >Middle Name (as shown on ID) </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+           
+            <ion-input  [value]="middleNameValue" formControlName="middleName" type="text" [class.invalid]="!slideOneForm.controls.middleName.valid && (slideOneForm.controls.middleName.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label >Last Name (as shown on ID) <span style="color:red">*</span></ion-label>
+        </ion-item>
+        <ion-item lines="none">
+           
+              <ion-input  [value]="lastNameValue" formControlName="lastName" type="text" [class.invalid]="!slideOneForm.controls.lastName.valid && (slideOneForm.controls.lastName.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+  
+          <ion-item *ngIf="!slideOneForm.controls.lastName.valid  && (slideOneForm.controls.lastName.dirty || submitAttempt)">
+            <p style="color: #ea6153;">Please enter a valid name.</p>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label >Email Address <span style="color:red">*</span></ion-label>
+        </ion-item>
+        <ion-item lines="none">
+           
+              <ion-input [value]="emailValue" formControlName="email" type="email" [class.invalid]="!slideOneForm.controls.email.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+  
+          <ion-item *ngIf="!slideOneForm.controls.email.valid  && (slideOneForm.controls.email.dirty || submitAttempt)">
+            <p style="color: #ea6153;">Please enter a valid email address.</p>
+        </ion-item>
+
+
+        <ion-item lines="none">
+            <ion-label >Mobile Number <span style="color:red">*</span></ion-label>
+        </ion-item>
+        <ion-item lines="none">
+           
+              <input type="text"
+              disabled
+              style="border-radius:5px;border:solid 1px black;background-color: rgb(244, 244, 244);padding-top:10px;padding-bottom:10px;" 
+              ng2TelInput
+              [value]="phoneValue"
+              [ng2TelInputOptions]="{initialCountry: 'ug'}"
+              (hasError)="hasError($event)"
+              (ng2TelOutput)="getNumber($event)"
+              (intlTelInputObject)="telInputObject($event)"
+              (countryChange)="onCountryChange($event)"  />
+            </ion-item>
+
+           
+  
+        
+
+
+        <ion-item lines="none">
+            <ion-label >Additional Mobile Number <br>(This isn't your registered number) </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+           
+              <input type="text"
+              style="border-radius:5px;border:solid 1px black;background-color: rgb(244, 244, 244);padding-top:10px;padding-bottom:10px;" 
+              ng2TelInput
+              [value]="other_phoneValue"
+              formControlName="other_phone"
+              [ng2TelInputOptions]="{initialCountry: 'ug'}"
+              (hasError)="hasError($event)"
+              (ng2TelOutput)="getNumber($event)"
+              (intlTelInputObject)="telInputObject($event)"
+              (countryChange)="onCountryChange($event)" />
+            </ion-item>
+  
+          <ion-item *ngIf="!slideOneForm.controls.other_phone.valid  && (slideOneForm.controls.other_phone.dirty || submitAttempt)">
+            <p style="color: #ea6153;">Please enter a valid mobile number.</p>
+        </ion-item>
+
+
+
+
+
+
+
+       
+    
+           
+           
+        <ion-item lines="none">
+          <ion-label >Date of birth <span style="color:red">*</span></ion-label>
+      </ion-item>
+            <ion-item lines="none">
+             
+              <ion-datetime max="2002" [value]="dobValue" formControlName="dob" style="padding:10px;border-radius:5px;border:solid 1px black;background-color: rgb(244, 244, 244)" placeholder="Select your birthday"></ion-datetime>
+            </ion-item>
+  
+            <ion-item *ngIf="!slideOneForm.controls.dob.valid  && (slideOneForm.controls.dob.dirty || submitAttempt)">
+              <p style="color: #ea6153;">Please enter a valid birthday.</p>
+          </ion-item>
+
+
+
+
+      </form>
+  
+  </ion-list>
+  
+ 
+  </ion-card>
+
+ 
+  <div padding>
+    <ion-text color="dark" no-margin>
+      By proceeding, you agree to the use of the info you have provided to contact you for tracking application status, contact and follow-ups for verification purposes
+    </ion-text>
+  </div>
+
+
+</ion-content>
+
+
+
+<ion-footer>
+   
+    
+  <ion-row >
+        
+    <ion-col>
+      <ion-button size="large" expand="full" color="primary" (click)="save()" no-margin>Continue</ion-button>
+    </ion-col>
+   
+    
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,117 @@
+
+
+  <ion-content class="login auth-page">
+ 
+
+
+      <ion-card text-center class="bg-white">
+   
+        <ion-grid style="font-size:80%" fixed no-padding>
+          <ion-label style="font-size:200%" text-center >Welcome back <span style="font-weight:700">{{titleValue}} {{lastNameValue}} {{firstNameValue}}</span><br> Almost done! Here’s what’s left.</ion-label>
+          <ion-row>
+            <ion-col class="dext" size="12" padding>
+    
+         
+              <ion-item  no-lines>
+             
+                 
+                  <p class="fw700">National I.D/Passport</p>
+                  <ion-icon  color="danger" slot="end" name="close-circle"></ion-icon>
+   
+                  <!-- <ion-icon *ngIf="!identity"  color="danger" slot="end" name="close-circle"></ion-icon> -->
+                  <!-- <ion-icon *ngIf="identity" style="color:rgb(4, 141, 4)" slot="end" name="checkmark-circle"></ion-icon> -->
+              
+              </ion-item>
+    
+              
+              <ion-item  no-lines>
+             
+                 
+                <p class="fw700">Academic Documents</p>
+                <ion-icon  color="danger" slot="end" name="close-circle"></ion-icon>
+
+                <!-- <ion-icon *ngIf="!academic"  color="danger" slot="end" name="close-circle"></ion-icon>
+                <ion-icon *ngIf="academic" style="color:rgb(4, 141, 4)" slot="end" name="checkmark-circle"></ion-icon> -->
+            
+            </ion-item> 
+              <ion-item  no-lines>
+             
+                 
+                <p class="fw700">Curriculum Vitae</p>
+                <ion-icon  color="danger" slot="end" name="close-circle"></ion-icon>
+   
+                <!-- <ion-icon *ngIf="!cv"  color="danger" slot="end" name="close-circle"></ion-icon> -->
+                <!-- <ion-icon *ngIf="cv" style="color:rgb(4, 141, 4)" slot="end" name="checkmark-circle"></ion-icon> -->
+            
+            </ion-item>
+
+            <ion-item  no-lines>
+             
+                 
+              <p class="fw700">Recommendation Letter</p>
+              <ion-icon  color="danger" slot="end" name="close-circle"></ion-icon>
+
+              <!-- <ion-icon *ngIf="!rec"  color="danger" slot="end" name="close-circle"></ion-icon> -->
+              <!-- <ion-icon *ngIf="rec" style="color:rgb(4, 141, 4)" slot="end" name="checkmark-circle"></ion-icon> -->
+          
+          </ion-item>
+
+          <ion-item  no-lines>
+             
+                 
+            <p class="fw700">L.C.1 Letter</p>
+            
+            <ion-icon  color="danger" slot="end" name="close-circle"></ion-icon>
+
+            <!-- <ion-icon *ngIf="!lc"  color="danger" slot="end" name="close-circle"></ion-icon> -->
+            <!-- <ion-icon *ngIf="lc" style="color:rgb(4, 141, 4)" slot="end" name="checkmark-circle"></ion-icon> -->
+        
+        </ion-item>
+  
+   
+        
+              
+          
+    
+            
+      
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+      
+    
+       
+        </ion-card>
+ 
+</ion-content>
+
+
+<ion-footer>
+
+
+<ion-row >
+  <ion-col size="3">
+    <!-- <ion-button size="large" expand="full" color="secondary" (click)="myBackButton()" no-margin>
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-button> -->
+  </ion-col>
+
+ 
+  <ion-col>
+    <ion-button size="large" expand="full" color="primary" (click)="resume()" no-margin>Resume Application</ion-button>
+    
+  </ion-col>
+
+
+</ion-row>
+</ion-footer>
+
+
+
+
+
+
+
+
+

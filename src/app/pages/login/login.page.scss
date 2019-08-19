@@ -1,0 +1,20 @@
+:host {
+    ion-content {
+   
+
+        // background-image: url('../assets/img/bg.jpg');
+        // background: url("../assets/img/bg.jpg") no-repeat;
+        // --background: url(../../assets/img/bg.jpg) no-repeat;
+      
+        --background: url('/assets/img/bg.jpg') no-repeat 100% 100%;
+        background-size: 110% 110%;
+        background-position: center center;
+    }
+
+   
+}
+
+.paz {
+    position: relative;
+    z-index: 10;
+}

@@ -1,0 +1,30 @@
+:host {
+    ion-content {
+      // --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary))
+    }
+    
+  
+  ion-slides {
+      height: 100%;
+  }
+  
+  ion-slide {
+      display: block;
+  }
+  
+  
+  
+  .invalid {
+      // border: 1px solid #ea6153;
+  }
+  ion-label{
+  font-weight: 500;
+  }
+
+  ion-input{
+    padding: 5px !important;
+    border-radius:5px;border:solid 1px black;background-color: rgb(244, 244, 244);
+  }
+  
+  }
+  
